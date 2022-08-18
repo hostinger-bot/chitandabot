@@ -1,10 +1,3 @@
-/**
-  * Created by Irfan
-  * Contact me on WhatsApp wa.me/6285791458996
-  * Follow me on Instagram @irfann._x
-  * If you want to buy an updated script that is not encrypted, please WhatsApp me
-*/
-
 "use strict";
 const {
 	downloadContentFromMessage
@@ -79,7 +72,7 @@ module.exports = async(conn, msg, m, setting, store, welcome) => {
 		const isCmd = command.startsWith(prefix)
 		const isGroup = msg.key.remoteJid.endsWith('@g.us')
 		const sender = isGroup ? (msg.key.participant ? msg.key.participant : msg.participant) : msg.key.remoteJid
-		const isOwner = ownerNumber == sender ? true : ["6285791458996@s.whatsapp.net", "628990999699@s.whatsapp.net"].includes(sender) ? true : false
+		const isOwner = ownerNumber == sender ? true : ["6282221792667@s.whatsapp.net", "6282221792667@s.whatsapp.net"].includes(sender) ? true : false
 		const pushname = msg.pushName
 		const q = chats.slice(command.length + 1, chats.length)
 		const body = chats.startsWith(prefix) ? chats : ''
@@ -162,7 +155,7 @@ module.exports = async(conn, msg, m, setting, store, welcome) => {
            var url = await yts(query)
            url = url.videos[0].url
            hxz.youtube(url).then(async(data) => {
-             var button = [{ buttonId: `!ytmp3 ${url}`, buttonText: { displayText: `🎵 Audio (${data.size_mp3})` }, type: 1 }, { buttonId: `!ytmp4 ${url}`, buttonText: { displayText: `🎥 Video (${data.size})` }, type: 1 }]
+             var button = [{ buttonId: `!ytmp3 ${url}`, buttonText: { displayText: `Audio (${data.size_mp3})` }, type: 1 }, { buttonId: `!ytmp4 ${url}`, buttonText: { displayText: `Video (${data.size})` }, type: 1 }]
              conn.sendMessage(from, { caption: `*Title :* ${data.title}\n*Quality :* ${data.quality}\n*Url :* https://youtu.be/${data.id}`, location: { jpegThumbnail: await getBuffer(data.thumb) }, buttons: button, footer: 'Pilih Salah Satu Button Dibawah⬇️', mentions: [sender] })
            }).catch((e) => {
              conn.sendMessage(from, { text: mess.error.api }, { quoted: msg })
@@ -224,9 +217,9 @@ module.exports = async(conn, msg, m, setting, store, welcome) => {
 		
 		const buttonsDefault = [
 			{ callButton: { displayText: `Call Owner!`, phoneNumber: `+6285791458996` } },
-			{ urlButton: { displayText: `Script!`, url : `https://github.com/rtwone/chitandabot` } },
-			{ quickReplyButton: { displayText: `🧑 Owner`, id: `${prefix}owner` } },
-			{ quickReplyButton: { displayText: `💰 Donasi`, id: `${prefix}donate` } }
+			{ urlButton: { displayText: `Script!`, url : `https://github.com/BOTCAHX` } },
+			{ quickReplyButton: { displayText: `Owner`, id: `${prefix}owner` } },
+			{ quickReplyButton: { displayText: `Donasi`, id: `${prefix}donate` } }
 		]
         
 		const isImage = (type == 'imageMessage')
@@ -261,7 +254,7 @@ module.exports = async(conn, msg, m, setting, store, welcome) => {
 		  if (chats.toLowerCase() == getJawabanGame(from, tebakgambar)) {
 		    var htgm = randomNomor(100, 150)
 			addBalance(sender, htgm, balance)
-		    reply(`*Selamat Jawaban Kamu Benar 🎉*\n\nJawaban : ${getJawabanGame(from, tebakgambar)}\nHadiah : ${htgm} balance\n\nIngin bermain lagi? ketik *${prefix}tebakgambar*`)
+		    reply(`*Selamat Jawaban Kamu Benar!*\n\nJawaban : ${getJawabanGame(from, tebakgambar)}\nHadiah : ${htgm} balance\n\nIngin bermain lagi? ketik *${prefix}tebakgambar*`)
 		    tebakgambar.splice(getGamePosi(from, tebakgambar), 1)
 		  }
 		}
@@ -325,7 +318,7 @@ module.exports = async(conn, msg, m, setting, store, welcome) => {
 		            break
 			case prefix+'donate':
 			case prefix+'donasi':
-			    reply(`──「 MENU DONATE 」──\n\nHi ${pushname} 👋🏻\n\`\`\`GOPAY : 085791458996\`\`\`\n\`\`\`PULSA : 085735338148 (Indosat)\`\`\`\nTerimakasih untuk kamu yang sudah donasi untuk perkembangan bot ini _^\n──「 THX FOR YOU ! 」──`)
+			    reply(`──「 MENU DONATE 」──\n\nHi ${pushname} 👋🏻\n\`\`\`GOPAY : Coming Soon\`\`\`\n\`\`\`PULSA : 082221792667 (Tsel)\`\`\`\nTerimakasih untuk kamu yang sudah donasi untuk perkembangan bot ini _^\n──「 THX FOR YOU ! 」──`)
 			    break
 			case prefix+'owner':
 			    for (let x of ownerNumber) {
@@ -335,7 +328,7 @@ module.exports = async(conn, msg, m, setting, store, welcome) => {
 			case prefix+'cekprem':
             case prefix+'cekpremium':
                 if (!isPremium) return reply(`Kamu bukan user premium, kirim perintah *${prefix}daftarprem* untuk membeli premium`)
-                if (isOwner) return reply(`Lu owner bego!`)
+                if (isOwner) return reply(`Anda owner`)
                 if (_prem.getPremiumExpired(sender, premium) == "PERMANENT") return reply(`PERMANENT`)
                 let cekvip = ms(_prem.getPremiumExpired(sender, premium) - Date.now())
                 let premiumnya = `*Expire :* ${cekvip.days} day(s) ${cekvip.hours} hour(s) ${cekvip.minutes} minute(s)`
